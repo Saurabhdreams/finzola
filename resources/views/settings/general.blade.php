@@ -8,11 +8,11 @@
             <div class="row">
                 <div class="form-group col-sm-4 mb-5">
                     {{ Form::label('app_name', __('messages.setting.app_name') . ':', ['class' => 'form-label required mb-3']) }}
-                    {{ Form::text('app_name', !empty($settings['app_name']) ? $settings['app_name'] : $data['app_name'], ['class' => 'form-control form-control-solid', 'required', 'placeholder' => __('messages.setting.app_name')]) }}
+                    {{ Form::text('app_name', !empty($settings['app_name']) ? $settings['app_name'] : $data['app_name'], ['class' => 'form-control form-control-solid', 'placeholder' => __('messages.setting.app_name')]) }}
                 </div>
                 <div class="form-group col-sm-4 mb-5">
                     {{ Form::label('company_name', __('messages.setting.company_name') . ':', ['class' => 'form-label required mb-3']) }}
-                    {{ Form::text('company_name', !empty($settings['company_name']) ? $settings['company_name'] : $data['company_name'], ['class' => 'form-control form-control-solid', 'required', 'placeholder' => __('messages.setting.company_name')]) }}
+                    {{ Form::text('company_name', !empty($settings['company_name']) ? $settings['company_name'] : $data['company_name'], ['class' => 'form-control form-control-solid', 'placeholder' => __('messages.setting.company_name')]) }}
                 </div>
                 <div class="form-group col-sm-2 mb-5 user-country-code">
                     {{ Form::label('country_phone', __('messages.setting.country_code') . ':', ['class' => 'form-label mb-3']) }}
@@ -103,7 +103,7 @@
                 </div>
                 <div class="form-group col-sm-12 mb-5">
                     {{ Form::label('company_address', __('messages.setting.company_address') . ':', ['class' => 'form-label required  mb-3']) }}
-                    {{ Form::textarea('company_address', $settings['company_address'], ['class' => 'form-control form-control-solid', 'rows' => 5, 'cols' => 5, 'required', 'id' => 'companyAddress', 'placeholder' => __('messages.setting.address')]) }}
+                    {{ Form::textarea('company_address', $settings['company_address'], ['class' => 'form-control form-control-solid', 'rows' => 5, 'cols' => 5, 'id' => 'companyAddress', 'placeholder' => __('messages.setting.address')]) }}
                 </div>
                 <!-- App Logo Field -->
                 <div class="form-group col-sm-4 mb-5">

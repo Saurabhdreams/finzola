@@ -54,7 +54,7 @@ class RegisteredUserController extends Controller
             'password' => 'required|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}$/|same:password_confirmation|min:6',
         ], [
             'email.regex' => 'The email format is invalid.',
-            'password.regex' => 'The password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.',
+            'password.regex' => 'Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one of the following special characters: ! @ $ % ^ & * ( ) _ + - =',
         ]);
 
         $input = $request->all();

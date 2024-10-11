@@ -71,6 +71,7 @@ class SettingController extends AppBaseController
      */
     public function editSuperAdminSettings(Request $request)
     {
+        dd("sajasljk");
         $settings = $this->settingRepository->getSyncListForSuperAdmin();
         $sectionName = ($request->section === null) ? 'general' : $request->section;
 

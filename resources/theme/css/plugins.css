@@ -2057,9 +2057,9 @@ select + .select2-container--bootstrap-5 {
 .swal-modal .swal-footer .swal-button-container .swal-button--cancel {
     background-color: #adb5bd;
 }
-.swal-modal .swal-footer .swal-button-container .swal-button--confirm {
+/* .swal-modal .swal-footer .swal-button-container .swal-button--confirm {
     background-color: #f62947;
-}
+} */
 
 .swal-icon--custom img {
     width: 62px;

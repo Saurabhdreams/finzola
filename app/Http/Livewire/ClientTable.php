@@ -16,6 +16,8 @@ class ClientTable extends LivewireTableComponent
     // for table header button
     public bool $showButtonOnHeader = true;
 
+    public static $counter = 1;
+
     public string $buttonComponent = 'clients.components.add-button';
 
     public function configure(): void
@@ -49,6 +51,10 @@ class ClientTable extends LivewireTableComponent
     public function columns(): array
     {
         return [
+            Column::make('id')
+            ->format(function ($value, $row, Column $column) {
+                return self::$counter++;
+            }),
             Column::make(__('messages.client.client'), 'first_name')
                 ->searchable(function (Builder $query, $direction) {
                     $query->whereRaw("TRIM(CONCAT(first_name,' ',last_name,' ')) like '%{$direction}%'");

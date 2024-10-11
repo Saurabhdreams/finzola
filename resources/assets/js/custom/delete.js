@@ -13,7 +13,7 @@ window.deleteItem = function (url, tableId, header, callFunction = null) {
     swalWithBootstrapButtons
         .fire({
             title: "Delete !",
-            text: 'Are you sure want to delete this "' + header + '" ?',
+            text: 'Are you sure you want to delete this "' + header + '" ?',
             icon: "warning",
             showCancelButton: true,
             confirmButtonColor: "#D9214E",

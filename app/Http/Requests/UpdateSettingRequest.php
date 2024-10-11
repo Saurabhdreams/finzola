@@ -21,7 +21,6 @@ class UpdateSettingRequest extends FormRequest
     public function rules(): array
     {
         $rules = Setting::$rules;
-
         $rules['company_phone'] = [
             'required',
             function($attribute, $value, $fail) {
@@ -36,7 +35,7 @@ class UpdateSettingRequest extends FormRequest
                 }
             }
         ];
-       
+
 
 
         return $rules;
@@ -44,8 +43,18 @@ class UpdateSettingRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'company_phone.required' => 'Company phone required',
-            'company_phone.invalid_phone_prefix' =>'The company phone number must start with the selected country code.',
+            'app_name.required_with' => 'The application name must be a string.',
+            'app_name.max' => 'The application name may not exceed 191 characters.',
+            'company_name.required_with' => 'The company name must be a string.',
+            'company_name.max' => 'The company name may not exceed 191 characters.',
+            'app_logo.required_with' => 'The app logo must be a file of type: jpg, jpeg, png.',
+            'company_logo.mimes' => 'The company logo must be a file of type: jpg, jpeg, png.',
+            'country.required_with' => 'The country is required when additional address is shown in the invoice.',
+            'state.required_with' => 'The state is required when additional address is shown in the invoice.',
+            'city.required_with' => 'The city is required when additional address is shown in the invoice.',
+            'zipcode.required_with' => 'The zipcode is required when additional address is shown in the invoice.',
+            'fax_no.required_with' => 'The fax number is required when additional address is shown in the invoice.',
         ];
     }
+
 }

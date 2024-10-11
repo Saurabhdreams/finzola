@@ -43,7 +43,7 @@
                                         <h2 class="fs-1-xxl fw-bolder text-white">
                                             {{ __('messages.admin_dashboard.total_amount') }}
                                         </h2>
-                                        <span class="text-white">{{ __('messages.common.click_here') }}</span>
+                                        {{-- <span class="text-white">{{ __('messages.common.click_here') }}</span> --}}
                                     </div>
                                 </div>
                             </a>
@@ -57,7 +57,7 @@
                                         <h2 class="fs-1-xxl fw-bolder text-white">
                                             {{ __('messages.admin_dashboard.total_paid') }}
                                         </h2>
-                                        <span class="text-white">{{ __('messages.common.click_here') }}</span>
+                                        {{-- <span class="text-white">{{ __('messages.common.click_here') }}</span> --}}
                                     </div>
                                 </div>
                             </a>
@@ -71,7 +71,7 @@
                                         <h2 class="fs-1-xxl fw-bolder text-white">
                                             {{ __('messages.admin_dashboard.total_due') }}
                                         </h2>
-                                        <span class="text-white">{{ __('messages.common.click_here') }}</span>
+                                        {{-- <span class="text-white">{{ __('messages.common.click_here') }}</span> --}}
                                     </div>
                                 </div>
                             </a>

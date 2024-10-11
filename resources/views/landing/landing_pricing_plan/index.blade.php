@@ -12,6 +12,7 @@
         border-color: #d5dbfd !important;
         transition: box-shadow 0.3s ease-in-out;
 }
+
 </style>
 <section class="app-rate">
     <div class="container">

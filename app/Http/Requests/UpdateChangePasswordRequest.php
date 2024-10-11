@@ -21,8 +21,8 @@ class UpdateChangePasswordRequest extends FormRequest
     {
         return [
             'current_password' => 'required|min:6',
-            'new_password' => 'required|min:6|max:18|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}$/|same:confirm_password',
-            'confirm_password' => 'required|min:6',
+            'new_password' => 'required|min:6|max:18|different:current_password|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}$/|same:confirm_password',
+            'confirm_password' => 'required|min:6|same:new_password',
         ];
     }
 
@@ -30,6 +30,8 @@ class UpdateChangePasswordRequest extends FormRequest
     {
         return [
           'new_password.regex' => 'The password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.',
+          'new_password.different' => 'The new password cannot be the same as the current password.',
+          'new_password.min' => 'The new password must be at least 6 characters long.',
         ];
-    }   
+    }
 }

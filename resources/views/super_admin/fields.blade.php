@@ -2,19 +2,19 @@
     <div class="col-lg-6">
         <div class="mb-5">
             {{ Form::label('first_name', __('messages.super_admin.first_name').':', ['class' => 'form-label required mb-3']) }}
-            {{ Form::text('first_name', isset($user) ? $user->first_name : null, ['class' => 'form-control form-control-solid', 'placeholder' => __('messages.client.first_name'), 'required']) }}
+            {{ Form::text('first_name', isset($user) ? $user->first_name : null, ['class' => 'form-control form-control-solid', 'placeholder' => __('messages.client.first_name')]) }}
         </div>
     </div>
     <div class="col-lg-6">
         <div class="mb-5">
             {{ Form::label('last_name', __('messages.super_admin.last_name').':', ['class' => 'form-label required mb-3']) }}
-            {{ Form::text('last_name', isset($user) ? $user->last_name : null, ['class' => 'form-control form-control-solid', 'placeholder' => __('messages.client.last_name'), 'required']) }}
+            {{ Form::text('last_name', isset($user) ? $user->last_name : null, ['class' => 'form-control form-control-solid', 'placeholder' => __('messages.client.last_name')]) }}
         </div>
     </div>
     <div class="col-lg-6">
         <div class="mb-5">
-            {{ Form::label('email', __('messages.super_admin.email').':', ['class' => 'form-label mb-3 required']) }}
-            {{ Form::email('email', isset($user) ? $user->email : null, ['class' => 'form-control form-control-solid', 'placeholder' => __('messages.client.email'),'required']) }}
+            {{ Form::label('email', __('messages.super_admin.email').':', ['class' => 'form-label mb-3']) }}
+            {{ Form::email('email', isset($user) ? $user->email : null, ['class' => 'form-control form-control-solid', 'placeholder' => __('messages.client.email')]) }}
         </div>
     </div>
     <div class="col-lg-6">
@@ -29,12 +29,12 @@
     <div class="col-md-6 mb-5">
         <div class="fv-row">
             <div>
-                {{ Form::label('password',__('messages.super_admin.password').':' ,['class' => 'form-label mb-3 required']) }}
+                {{ Form::label('password',__('messages.super_admin.password').':' ,['class' => 'form-label mb-3']) }}
                 <div class="position-relative">
                     <input class="form-control form-control-solid"
                            type="password" placeholder="{{__('messages.super_admin.password')}}" name="password"
                            autocomplete="off"
-                           aria-label="Password" data-toggle="password" required>
+                           aria-label="Password" data-toggle="password">
                     <span class="position-absolute d-flex align-items-center top-0 bottom-0 end-0 me-4 input-icon input-password-hide cursor-pointer text-gray-600">
                             <i class="bi bi-eye-slash-fill"></i>
                     </span>
@@ -45,12 +45,12 @@
     <div class="col-md-6 mb-5">
         <div class="fv-row">
             <div>
-                {{ Form::label('confirmPassword',__('messages.super_admin.confirm_password').':' ,['class' => 'form-label mb-3 required']) }}
+                {{ Form::label('confirmPassword',__('messages.super_admin.confirm_password').':' ,['class' => 'form-label mb-3']) }}
                 <div class="position-relative">
                     <input class="form-control form-control-solid"
                            type="password"
                            placeholder="{{__('messages.super_admin.confirm_password')}}" name="password_confirmation"
-                           autocomplete="off" aria-label="Password" data-toggle="password" required>
+                           autocomplete="off" aria-label="Password" data-toggle="password">
                     <span class="position-absolute d-flex align-items-center top-0 bottom-0 end-0 me-4 input-icon input-password-hide cursor-pointer text-gray-600">
                            <i class="bi bi-eye-slash-fill"></i>
                     </span>

@@ -17,6 +17,7 @@ class InvoiceTable extends LivewireTableComponent
     public string $buttonComponent = 'invoices.components.add-button';
     public $status = '';
     public $recurringStatus = '';
+    public static $counter = 1;
 
     public array $dateFilter = [];
 
@@ -90,6 +91,11 @@ class InvoiceTable extends LivewireTableComponent
     public function columns(): array
     {
         return [
+            Column::make('id')
+            ->format(function ($value, $row, Column $column) {
+                return self::$counter++;
+            }),
+
             Column::make(__('messages.invoice.client'), 'client.user.first_name')
                 ->sortable(function (Builder $query, $direction) {
                     return $query->orderBy(Client::select('first_name')->whereColumn('users.id', 'user_id'), $direction);

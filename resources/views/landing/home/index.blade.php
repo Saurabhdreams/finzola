@@ -56,7 +56,7 @@
                         <div class="col-xxl-4 col-md-6 invoice-block">
                             <div class="invoice-card mx-lg-2">
                                 <div class="icon">
-                                    <i class="fa-solid fa-money-check-dollar"></i>
+                                    <i class="fas fa-file-invoice-dollar"></i>
                                 </div>
                                 <h3 class="fs-4 fw-bold">{{ $sectionTwo['card_one_text'] }}</h3>
                                 <p class="mb-0 paragraph fs-16">
@@ -100,7 +100,7 @@
                         <div class="col-xxl-4 col-md-6 invoice-block">
                             <div class="invoice-card mx-lg-2">
                                 <div class="icon">
-                                    <i class="fa-solid fa-file" style="padding:0 5px;"></i>
+                                    <i class="fas fa-user-secret"></i>
                                 </div>
                                 <h3 class="fs-4 fw-bold">{{ $sectionTwo['card_five_text'] }}</h3>
                                 <p class="mb-0 paragraph fs-16">
@@ -111,7 +111,7 @@
                         <div class="col-xxl-4 col-md-6 invoice-block">
                             <div class="invoice-card mx-lg-2">
                                 <div class="icon">
-                                    <i class="fa-solid fa-file-invoice-dollar"></i>
+                                    <i class="fas fa-person-booth"></i>
                                 </div>
                                 <h3 class="fs-4 fw-bold">{{ $sectionTwo['card_six_text'] }}</h3>
                                 <p class="mb-0 paragraph fs-16">

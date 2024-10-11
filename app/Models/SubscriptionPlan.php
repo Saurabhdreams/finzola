@@ -59,8 +59,8 @@ class SubscriptionPlan extends Model
     ];
 
     public const PLAN_TYPE_SORT_NAME = [
-        1 => 'mo',
-        2 => 'yr',
+        1 => 'month',
+        2 => 'year',
     ];
 
     const FREQUENCY = [

@@ -26,6 +26,10 @@ class CreateSuperAdminRequest extends FormRequest
     public function messages(): array
     {
         return [
+            'email.required' => 'The Email field is required.',
+            'email.email' => 'The Email must be a valid email address.',
+            'email.unique' => 'The Email has already been taken.',
+            'email.regex' => 'The Email format is invalid.',
             'password_confirmation.required' => 'The confirm password field is required.',
             'password.same' => 'The password and confirm password must match',
         ];

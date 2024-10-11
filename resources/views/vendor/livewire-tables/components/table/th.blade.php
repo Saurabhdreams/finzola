@@ -8,6 +8,11 @@
     $customSortButtonAttributes = $component->getThSortButtonAttributes($column);
     $direction = $column->hasField() ? $component->getSort($column->getColumnSelectName()) : null;
 @endphp
+<style>
+    tbody,td,tfoot,th,thead,tr{
+        text-align: center;
+    }
+</style>
 
 @if ($theme === 'tailwind')
     <th scope="col" {{
@@ -22,7 +27,7 @@
         @else
             <button
                 wire:click="sortBy('{{ $column->getColumnSelectName() }}')"
-                {{ 
+                {{
                     $attributes->merge($customSortButtonAttributes)
                         ->class(['flex items-center space-x-1 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider group focus:outline-none dark:text-gray-400' => $customSortButtonAttributes['default'] ?? true])
                         ->except(['default', 'wire:key'])
@@ -67,7 +72,7 @@
         @unless ($component->sortingIsEnabled() && $column->isSortable())
             {{ $column->getTitle() }}
         @else
-            <div 
+            <div
                 class="d-flex align-items-center"
                 wire:click="sortBy('{{ $column->getColumnSelectName() }}')"
                 style="cursor:pointer;"

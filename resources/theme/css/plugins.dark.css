@@ -1369,9 +1369,9 @@ select + .select2-container--bootstrap-5 {
 .swal-modal .swal-footer .swal-button-container .swal-button--cancel {
   background-color: #ADB5BD;
 }
-.swal-modal .swal-footer .swal-button-container .swal-button--confirm {
+/* .swal-modal .swal-footer .swal-button-container .swal-button--confirm {
   background-color: #F62947;
-}
+} */
 
 .swal-icon--custom img {
   width: 62px;

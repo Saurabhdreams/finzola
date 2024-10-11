@@ -1,6 +1,6 @@
 <style>
     .social-box svg {
-        width: 16px; 
+        width: 16px;
         height: auto;
         fill: currentColor;
     }
@@ -69,7 +69,7 @@
                                    class="text-decoration-none social-box d-flex align-items-center justify-content-center">
                                     <i class="fa-brands fa-facebook"></i>
                                 </a>
-                               
+
                                 <a href="https://www.medium.com/@1XLUniverse/" target="_blank"
                                      class="text-decoration-none social-box d-flex align-items-center justify-content-center ">
                                     <i class="fa-brands fa-medium"></i>
@@ -83,10 +83,10 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
                                 </a>
 
-                                <a href="https://www.reddit.com/user/1XLUniverse/" target="_blank"
+                                {{-- <a href="https://www.reddit.com/user/1XLUniverse/" target="_blank"
                                     class="text-decoration-none social-box d-flex align-items-center justify-content-center">
                                     <i class="fa-brands fa-reddit"></i>
-                                </a>
+                                </a> --}}
 								 <a href="https://www.pinterest.com/1XLUniverse/" target="_blank"
                                     class="text-decoration-none social-box d-flex align-items-center justify-content-center">
                                     <i class="fa-brands fa-pinterest"></i>
@@ -102,13 +102,13 @@
                                     {{ empty($settingValue['twitter_url']['value']) ? 'd-none' : ''}}">
                                     <i class="fa-brands fa-twitter"></i>
                                 </a> --}}
-                               
-                               
+
+
                                 <a href="{{ $settingValue['linkedin_url']['value'] }}" target="_blank"
                                     class="text-decoration-none social-box d-flex align-items-center justify-content-center">
                                     <i class="fa-brands fa-linkedin-in"></i>
                                 </a>
-             
+
                                 <a href="https://www.quora.com/profile/1XLUniverse/" target="_blank"
                                     class="text-decoration-none social-box d-flex align-items-center justify-content-center">
                                     <i class="fa-brands fa-quora"></i>
@@ -121,7 +121,7 @@
                                 class="text-decoration-none social-box d-flex align-items-center justify-content-center">
                                 <i class="fa-brands fa-whatsapp"></i>
                                 </a>
-                            
+
                                 <a href="https://www.threads.net/@1XLUniverse/" target="_blank"
                                     class="text-decoration-none social-box d-flex align-items-center justify-content-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">

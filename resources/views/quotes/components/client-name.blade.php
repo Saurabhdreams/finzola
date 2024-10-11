@@ -2,7 +2,7 @@
     <div class="symbol symbol-circle symbol-50px overflow-hidden me-2">
         <a href="{{route('clients.show', $row->client->id)}}">
             <div class="image image-circle image-mini me-2">
-                <img src="{{$row->client->user->profile_image}}" alt="" class="user-img" width="50px" height="50px">
+                <img src="{{$row->client->user->profile_image}}" alt="" class="user-img" >
             </div>
         </a>
     </div>

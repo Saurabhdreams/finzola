@@ -29,14 +29,18 @@ class UpdateUserProfileRequest extends FormRequest
                 'required',
                 'email',
                 'unique:users,email,' . $id,
-                'regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
+                'regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/',
                 function ($attribute, $value, $fail) {
                     $parts = explode('@', $value);
                     if (count($parts) === 2 && preg_match('/\d/', $parts[1])) {
                         $fail('The :attribute should not contain numbers after the @ symbol.');
                     }
+                    if (preg_match('/\.[a-zA-Z]{2,3}\.[a-zA-Z]{2,}$/', $parts[1])) {
+                        $fail('The :attribute must not have multiple domain extensions.');
+                    }
                 }
-            ],  
+            ],
+
             'image' => 'mimes:jpeg,jpg,png',
         ];
     }

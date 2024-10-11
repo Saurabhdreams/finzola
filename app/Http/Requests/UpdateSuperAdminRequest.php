@@ -22,10 +22,21 @@ class UpdateSuperAdminRequest extends FormRequest
         return [
             'first_name' => 'required|max:191',
             'last_name' => 'required|max:191',
-            'email' => 'nullable|email|regex:/^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/|is_unique:users,email,'.$this->route('super_admin'),
+            'email' => 'nullable|email|regex:/^[\w\-\.\+]+@[a-zA-Z0-9\-]+\.[a-zA-Z]{2,3}$/|is_unique:users,email,'.$this->route('super_admin'),
             'contact' => 'required|is_unique:users,contact,'.$this->route('super_admin'),
-            'password' => 'nullable|same:password_confirmation|min:6',
+            'password' => [
+                'nullable',
+                'same:password_confirmation',
+                'regex:/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\W_]).{8,}$/'
+            ],
             'status' => 'nullable',
+        ];
+    }
+
+    public function messages(): array
+    {
+        return [
+            'password.regex' => 'The password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one digit, and one special character.',
         ];
     }
 }

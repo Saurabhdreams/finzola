@@ -117,6 +117,7 @@ class UserController extends AppBaseController
 
     public function editProfile(): \Illuminate\View\View
     {
+
         $user = Auth::user();
 
         return view('profile.index', compact('user'));
@@ -139,6 +140,9 @@ class UserController extends AppBaseController
             $user = Auth::user();
             if (! Hash::check($input['current_password'], $user->password)) {
                 return $this->sendError(__('messages.flash.current_password_is_invalid'));
+            }
+            if ($input['current_password'] === $input['new_password']) {
+                return $this->sendError(__('The new password cannot be the same as the current password.'));
             }
             $input['password'] = Hash::make($input['new_password']);
             $user->update($input);

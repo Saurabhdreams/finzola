@@ -12,6 +12,8 @@ class QuoteTable extends LivewireTableComponent
 {
     protected $model = Quote::class;
 
+    public static $counter = 1;
+
     protected string $tableName = 'quotes';
 
     public bool $showButtonOnHeader = true;
@@ -60,6 +62,10 @@ class QuoteTable extends LivewireTableComponent
     public function columns(): array
     {
         return [
+            Column::make('id')
+            ->format(function ($value, $row, Column $column) {
+                return self::$counter++;
+            }),
             Column::make(__('messages.quote.client'), 'client.user.first_name')
                 ->sortable(function (Builder $query, $direction) {
                     return $query->orderBy(Client::select('first_name')->whereColumn('users.id', 'user_id'), $direction);
@@ -73,7 +79,7 @@ class QuoteTable extends LivewireTableComponent
                 ->sortable()
                 ->searchable()->hideIf(1),
             Column::make(__('messages.quote.quote_date'), 'quote_date')
-                ->sortable()
+                // ->sortable()
                 ->searchable()
                 ->format(function ($value, $row, Column $column) {
                     return view('quotes.components.quote-due-date')
@@ -82,7 +88,6 @@ class QuoteTable extends LivewireTableComponent
                         ]);
                 }),
             Column::make(__('messages.quote.due_date'), 'due_date')
-                ->sortable()
                 ->searchable()
                 ->format(function ($value, $row, Column $column) {
                     return view('quotes.components.quote-due-date')
@@ -91,7 +96,6 @@ class QuoteTable extends LivewireTableComponent
                         ]);
                 }),
             Column::make(__('messages.quote.amount'), 'final_amount')
-                ->sortable()
                 ->searchable()
                 ->format(function ($value, $row, Column $column) {
                     return getCurrencyAmount($row->final_amount, true);
