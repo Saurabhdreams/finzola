@@ -18,6 +18,8 @@ class AdminPaymentTable extends LivewireTableComponent
     // for table header button
     public bool $showButtonOnHeader = true;
 
+    public static $counter = 1;
+
     public string $buttonComponent = 'payments.components.add-button';
 
     public $paymentDateFilter = '';
@@ -63,6 +65,10 @@ class AdminPaymentTable extends LivewireTableComponent
     public function columns(): array
     {
         return [
+            Column::make('id')
+            ->format(function ($value, $row, Column $column) {
+                return self::$counter++;
+            }),
             Column::make(__('messages.invoices'), 'invoice_id')
                 ->searchable(function (Builder $query, $invoiceID) {
                     return $query->orWhere('invoices.invoice_id', 'like', '%'.trim($invoiceID).'%');

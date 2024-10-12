@@ -16,6 +16,8 @@ class ProductTable extends LivewireTableComponent
     // for table header button
     public bool $showButtonOnHeader = true;
 
+    public static $counter = 1;
+
     public string $buttonComponent = 'products.components.add-button';
 
     public function configure(): void
@@ -58,6 +60,10 @@ class ProductTable extends LivewireTableComponent
     public function columns(): array
     {
         return [
+            Column::make('id')
+            ->format(function ($value, $row, Column $column) {
+                return self::$counter++;
+            }),
             Column::make(__('messages.product.product_name'), 'name')
                 ->sortable()
                 ->searchable()

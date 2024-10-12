@@ -21,7 +21,7 @@ class UpdateChangePasswordRequest extends FormRequest
     {
         return [
             'current_password' => 'required|min:6',
-            'new_password' => 'required|min:6|max:18|different:current_password|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}$/|same:confirm_password',
+            'new_password' => 'required|min:6|max:18|different:current_password|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/|same:confirm_password',
             'confirm_password' => 'required|min:6|same:new_password',
         ];
     }

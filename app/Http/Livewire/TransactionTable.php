@@ -21,6 +21,8 @@ class TransactionTable extends LivewireTableComponent
 
     public string $paymentMode = '';
 
+    public static $counter = 1;
+
     public string $paymentStatus = '';
 
     public array $dateRange = [];
@@ -74,6 +76,10 @@ class TransactionTable extends LivewireTableComponent
     public function columns(): array
     {
         return [
+            Column::make('id')
+            ->format(function ($value, $row, Column $column) {
+                return self::$counter++;
+            }),
             Column::make(__('messages.payment.transaction_id'), 'transaction_id')
                 ->searchable()
                 ->view('transactions.components.transactions-id'),

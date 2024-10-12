@@ -12,6 +12,8 @@ class CategoryTable extends LivewireTableComponent
 
     protected string $tableName = 'categories';
 
+    public static $counter = 1;
+
     // for table header button
     public bool $showButtonOnHeader = true;
 
@@ -52,6 +54,10 @@ class CategoryTable extends LivewireTableComponent
     public function columns(): array
     {
         return [
+            Column::make('id')
+            ->format(function ($value, $row, Column $column) {
+                return self::$counter++;
+            }),
             Column::make(__('messages.category.category'), 'name')
                 ->sortable()
                 ->searchable(),

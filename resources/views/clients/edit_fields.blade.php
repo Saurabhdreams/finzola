@@ -2,14 +2,14 @@
     <div class="col-lg-6">
         <div class="mb-5">
             {{ Form::label('first_name', __('messages.client.first_name') . ':', ['class' => 'form-label required mb-3']) }}
-            {{ Form::text('first_name', $client->user->first_name ?? null, ['class' => 'form-control form-control-solid user-first-name', 'placeholder' => __('messages.client.first_name'), 'required','pattern' => '[A-Za-z]+', 
+            {{ Form::text('first_name', $client->user->first_name ?? null, ['class' => 'form-control form-control-solid user-first-name', 'placeholder' => __('messages.client.first_name'), 'required','pattern' => '[A-Za-z]+',
             'title' => 'Please enter a valid name (letters only)']) }}
         </div>
     </div>
     <div class="col-lg-6">
         <div class="mb-5">
             {{ Form::label('last_name', __('messages.client.last_name') . ':', ['class' => 'form-label required mb-3']) }}
-            {{ Form::text('last_name', $client->user->last_name ?? null, ['class' => 'form-control form-control-solid user-last-name', 'placeholder' => __('messages.client.last_name'), 'required','pattern' => '[A-Za-z]+', 
+            {{ Form::text('last_name', $client->user->last_name ?? null, ['class' => 'form-control form-control-solid user-last-name', 'placeholder' => __('messages.client.last_name'), 'required','pattern' => '[A-Za-z]+',
             'title' => 'Please enter a valid name (letters only)']) }}
         </div>
     </div>

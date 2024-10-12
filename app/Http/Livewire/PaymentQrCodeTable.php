@@ -11,6 +11,8 @@ class PaymentQrCodeTable extends LivewireTableComponent
 {
     protected $model = PaymentQrCode::class;
 
+    public static $counter = 1;
+
     protected string $tableName = 'payment_qr_codes';
 
     // for table header button
@@ -61,6 +63,10 @@ class PaymentQrCodeTable extends LivewireTableComponent
     public function columns(): array
     {
         return [
+            Column::make('id')
+            ->format(function ($value, $row, Column $column) {
+                return self::$counter++;
+            }),
             Column::make(__('messages.payment_qr_codes.title'), 'title')
                 ->sortable()
                 ->searchable(),

@@ -40,6 +40,12 @@ class UpdateUserProfileRequest extends FormRequest
                     }
                 }
             ],
+                'contact' => [
+                'required',
+                'regex:/^\+?[1-9]\d{1,14}$/',
+                'min:10',
+                'max:15',
+                ],
 
             'image' => 'mimes:jpeg,jpg,png',
         ];

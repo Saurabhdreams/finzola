@@ -2,14 +2,14 @@
     <div class="col-lg-6">
         <div class="mb-5">
             {{ Form::label('first_name', __('messages.client.first_name') . ':', ['class' => 'form-label required mb-3']) }}
-            {{ Form::text('first_name', null, ['class' => 'form-control form-control-solid user-first-name', 'placeholder' => __('messages.client.first_name'), 'required','pattern' => '[A-Za-z]+', 
+            {{ Form::text('first_name', null, ['class' => 'form-control form-control-solid user-first-name', 'placeholder' => __('messages.client.first_name'), 'required','pattern' => '[A-Za-z]+',
             'title' => 'Please enter a valid name (letters only)']) }}
         </div>
     </div>
     <div class="col-lg-6">
         <div class="mb-5">
             {{ Form::label('last_name', __('messages.client.last_name') . ':', ['class' => 'form-label required mb-3']) }}
-            {{ Form::text('last_name', null, ['class' => 'form-control form-control-solid user-last-name', 'placeholder' => __('messages.client.last_name'), 'required','pattern' => '[A-Za-z]+', 
+            {{ Form::text('last_name', null, ['class' => 'form-control form-control-solid user-last-name', 'placeholder' => __('messages.client.last_name'), 'required','pattern' => '[A-Za-z]+',
             'title' => 'Please enter a valid name (letters only)']) }}
         </div>
     </div>
@@ -23,13 +23,24 @@
     <div class="col-lg-6">
         <div class="mb-5">
             {{ Form::label('contact', __('messages.client.contact_no') . ':', ['class' => 'form-label required mb-3']) }}
-            {{ Form::tel('contact', null, ['class' => 'form-control form-control-solid user-contact-number','required', 'onkeyup' => 'if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,"")', 'id' => 'phoneNumber']) }}
+
+            {{-- Contact input field --}}
+            {{ Form::tel('contact', null, [
+                'class' => 'form-control form-control-solid user-contact-number',
+                'required',
+                'onkeyup' => 'if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,"")',
+                'id' => 'phoneNumber',
+                'placeholder' => __('messages.client.contact_no'), // Keep placeholder as desired
+            ]) }}
+
             {{ Form::hidden('region_code', null, ['id' => 'prefix_code']) }}
+
             <span id="valid-msg" class="hide text-success fw-400 fs-small mt-2">✓
                 {{ __('messages.placeholder.valid_number') }}</span>
             <span id="error-msg" class="hide text-danger fw-400 fs-small mt-2"></span>
         </div>
     </div>
+
     <div class="col-md-6 mb-5">
         <div class="fv-row">
             <div>

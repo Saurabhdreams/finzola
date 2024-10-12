@@ -10,6 +10,8 @@ class TaxTable extends LivewireTableComponent
 {
     protected $model = Tax::class;
 
+    public static $counter = 1;
+
     protected string $tableName = 'taxes';
 
     // for table header button
@@ -57,6 +59,10 @@ class TaxTable extends LivewireTableComponent
     public function columns(): array
     {
         return [
+            Column::make('id')
+            ->format(function ($value, $row, Column $column) {
+                return self::$counter++;
+            }),
             Column::make(__('messages.common.name'), 'name')
                 ->sortable()
                 ->searchable(),

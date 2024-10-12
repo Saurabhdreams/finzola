@@ -103,7 +103,7 @@ class Client extends Model
         'first_name' => 'required|max:191',
         'last_name' => 'required|max:191',
         'email' => 'nullable|email:filter|regex:/^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/',
-        'password' => 'nullable|same:password_confirmation|min:6',
+        'password' => 'nullable|same:password_confirmation|min:6|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/',
         'contact' => 'nullable|is_unique:users,contact',
         'postal_code' => 'string',
         'address' => 'nullable|string',

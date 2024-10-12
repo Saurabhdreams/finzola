@@ -24,12 +24,12 @@ class CreateClientRequest extends FormRequest
         $existUser = \App\Models\User::whereEmail(request()->email)->withoutGlobalScope(new TenantScope())->first();
 
         $rules = Client::$rules;
-       
+
         $rules['postal_code'] = ['required', 'digits:6'];
         $rules['first_name'] = ['required', 'max:35'];
         $rules['last_name'] = ['required', 'max:35'];
         $rules['email'] = ['required', 'email'];
-    
+
         return $rules;
 
     }
